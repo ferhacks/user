@@ -42,7 +42,7 @@ const start = (kill = new Client()) => {
         const { name, groupMetadata } = gcChat
         const botNumbers = await kill.getHostNumber() + '@c.us'
         try {
-            if (event.action === 'add' && event.who !== botNumbers && isWelcome) {
+            if (event.action === 'add' && event.who !== botNumbers && iswelkom) {
                 const pic = await kill.getProfilePicFromServer(event.who)
                 if (pic === undefined) {
                     var picx = 'https://i.ibb.co/Tq7d7TZ/age-hananta-495-photo.png'
@@ -64,7 +64,7 @@ const start = (kill = new Client()) => {
                     .toAttachment()
                 const base64 = `data:image/png;base64,${welcomer.toBuffer().toString('base64')}`
                 await kill.sendFile(event.chat, base64, 'welcome.png', `Bienvenido ${pushname}!`)
-            } else if (event.action === 'remove' && event.who !== botNumbers && isWelcome) {
+            } else if (event.action === 'remove' && event.who !== botNumbers && iswelkom) {
                 const pic = await kill.getProfilePicFromServer(event.who)
                 if (pic === undefined) {
                     var picxs = 'https://i.ibb.co/Tq7d7TZ/age-hananta-495-photo.png'
