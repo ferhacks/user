@@ -34,7 +34,7 @@ const start = (kill = new Client()) => {
 		
 		// Configuração do welcome
     kill.onGlobalParticipantsChanged(async (event) => {
-        const isWelkom = welkom.includes(event.chat)
+        const iswelkom = welkom.includes(event.chat)
         const gcChat = await kill.getChatById(event.chat)
         const pcChat = await kill.getContact(event.who)
         let { pushname, verifiedName, formattedName } = pcChat
@@ -90,8 +90,7 @@ const start = (kill = new Client()) => {
         } catch (err) {
             console.error(err)
         }
-    })
-}        
+    })        
 		
 		// Funções para caso seja adicionada em um grupo
         kill.onAddedToGroup(async (chat) => {
